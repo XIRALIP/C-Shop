@@ -1,0 +1,14 @@
+package com.cshop.service.impl;
+
+import com.cshop.service.ItemService;
+import com.taotao.pojo.TbItem;
+
+public class ItemServiceImpl implements ItemService {
+
+	@Override
+	public TbItem getItemById(long itemId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

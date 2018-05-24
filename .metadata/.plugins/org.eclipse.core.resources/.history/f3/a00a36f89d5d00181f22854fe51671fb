@@ -1,0 +1,33 @@
+package com.cshop.controller;
+
+import com.qiniu.common.QiniuException;
+import com.qiniu.http.Response;
+import com.qiniu.storage.UploadManager;
+import com.qiniu.util.Auth;
+import com.qiniu.util.StringMap;
+import com.qiniu.util.UrlSafeBase64;
+
+import java.io.IOException;
+import com.qiniu.storage.Configuration;
+import com.qiniu.common.Zone;
+
+public class UploadDemo {
+    //设置好账号的ACCESS_KEY和SECRET_KEY
+    String ACCESS_KEY = "fF1fq7-m7KoezGY_edvYkrQYzK48n3xdb8kZ5ZD5";
+    String SECRET_KEY = "MB0D9tBuGxR__6oJUDXUzojQSK_H9JtaBw5BDvDg";
+    //要上传的空间
+    String bucketname = "p94fmvsn7.bkt.clouddn.com";
+    //上传到七牛后保存的文件名
+    String key = "my-java.png";
+    //上传文件的路径
+    String FilePath = "G:\\imageservice\\1.jpg";
+
+    public void test() {
+
+	Auth auth = Auth.create(ACCESS_KEY, SECRET_KEY);
+	String upToken = auth.uploadToken(bucket);
+	System.out.println(upToken);
+
+    }
+
+}

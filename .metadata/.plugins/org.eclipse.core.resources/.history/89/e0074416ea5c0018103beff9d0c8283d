@@ -1,0 +1,11 @@
+package com.cshop.controller;
+
+import org.junit.Test;
+
+
+public class TestPageHelper {
+	@Test
+	public void testPageHelpe() {
+		
+	}
+}

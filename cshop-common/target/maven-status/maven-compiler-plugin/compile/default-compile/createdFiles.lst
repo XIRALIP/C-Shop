@@ -1,2 +1,5 @@
 com\cshop\common\pojo\EUDataGridResult.class
+com\cshop\common\utils\JsonUtils.class
 com\cshop\common\pojo\EUTreeNode.class
+com\cshop\common\utils\FtpUtil.class
+com\cshop\common\utils\IDUtils.class

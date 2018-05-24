@@ -1,0 +1,16 @@
+package com.cshop.service.impl;
+
+import java.util.List;
+
+import com.cshop.common.pojo.EUTreeNode;
+import com.cshop.service.ItemCatService;
+
+public class ItemCatServiceImpl implements ItemCatService {
+
+	@Override
+	public List<EUTreeNode> getCatList(long parentId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

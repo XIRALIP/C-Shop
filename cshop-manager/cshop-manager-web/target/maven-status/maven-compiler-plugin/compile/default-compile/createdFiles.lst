@@ -1,3 +1,4 @@
 com\cshop\controller\ItemCatController.class
+com\cshop\controller\PictureController.class
 com\cshop\controller\PageController.class
 com\cshop\controller\ItemCotroller.class

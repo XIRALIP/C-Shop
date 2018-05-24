@@ -1,0 +1,8 @@
+package com.cshop.controller;
+
+import org.junit.Test;
+
+@Test
+public class TestPageHelper {
+
+}

@@ -1,0 +1,7 @@
+package com.cshop.common.pojo;
+
+public class EUTreeNode {
+	private long id;
+	private String text;
+	private String state;
+}

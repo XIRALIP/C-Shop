@@ -1,0 +1,84 @@
+package com.cshop.controller;
+
+import java.io.*;
+import java.io.FileInputStream;
+import java.io.InputStream;
+
+import org.apache.commons.net.ftp.FTP;
+import org.apache.commons.net.ftp.FTPClient;
+import org.apache.commons.net.ftp.FTPSClient;
+import org.junit.Test;
+
+import com.cshop.common.utils.FtpUtil;
+
+
+public class FTPTest {
+	@Test
+	public void testFtpClient() throws Exception {
+		//创建一个FtpClient对象
+		FTPClient ftpClient = new FTPSClient(); 
+		
+		//创建ftp连接。默认是21端口
+		ftpClient.connect("192.168.31.55", 21);
+		//登录ftp服务器，使用用户名和密码
+		ftpClient.login("ftpuser", "ftpuser");
+		//上传文件。
+		//读取本地文件
+		FileInputStream inputStream = new FileInputStream(new File("G:\\imageservice\\1.jpg"));
+		//设置上传的路径
+		ftpClient.changeWorkingDirectory("G:\\imageservice");
+		//修改上传文件的格式
+		ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
+		ftpClient.setDataTimeout(60000);       //设置传输超时时间为60秒 
+		ftpClient.setConnectTimeout(60000);       //连接超时为60秒
+		//第一个参数：服务器端文档名
+		//第二个参数：上传文档的inputStream
+		ftpClient.storeFile("hello1.jpg", inputStream);
+		//关闭连接
+		ftpClient.logout();
+		
+	}
+	
+	@Test
+	public void testFtpUtil() throws Exception {
+		//FileInputStream inputStream = new FileInputStream(new File("G:\\imageservice\\1.jpg"));
+		FileInputStream inputStream = new FileInputStream(new File("G:\\imageservice\\\\1.jpg"));
+		FtpUtil.uploadFile1("192.168.239.128", 21, "ftpuser", "ftpuser", "/home/ftpuser/www/images", "/2015/19/04", "hello.jpg", inputStream);
+		//FtpUtil.uploadFile("192.168.239.128", 21, "ftpuser", "ftpuser", "/home/vsftpd/root", "/2015/09/04", "hello.jpg", inputStream);
+		//FtpUtil.uploadFile("192.168.31.55",21, "ftpuser", "ftpuser",  "cms-picture/","/2015/09/04/", "hello.jpg",inputStream);
+	}
+	
+	@Test
+	public void newTest() {
+		 String ftpHost = "192.168.31.55";
+	        String ftpUserName = "ftpuser";
+	        String ftpPassword = "ftpuser";
+	        int ftpPort = 21;
+	        String ftpPath = "cms-picture/";
+	        String localPath = "F:\\11.txt";
+	        String fileName = "11.txt";
+
+	        //上传一个文件
+	        try{
+	            FileInputStream in=new FileInputStream(new File(localPath));
+	            boolean test = FtpMain.uploadFile(ftpHost, ftpUserName, ftpPassword, ftpPort, ftpPath, fileName,in);
+	            System.out.println(test);
+	        } catch (FileNotFoundException e){
+	            e.printStackTrace();
+	            System.out.println(e);
+	        }
+
+	        //在FTP服务器上生成一个文件，并将一个字符串写入到该文件中
+	        try {
+	            InputStream input = new ByteArrayInputStream("test ftp jyf".getBytes("GBK"));
+	            boolean flag = FtpMain.uploadFile(ftpHost, ftpUserName, ftpPassword, ftpPort, ftpPath, fileName,input);;
+	            System.out.println(flag);
+	        } catch (UnsupportedEncodingException e) {
+	            e.printStackTrace();
+	        }
+
+	        //下载一个文件
+	       // FtpMain.downloadFtpFile(ftpHost, ftpUserName, ftpPassword, ftpPort, ftpPath, localPath, fileName);
+	}
+
+}

@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.cshop</groupId>
+    <artifactId>cshop-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.cshop</groupId>
+  <artifactId>cshop-manager</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <dependencies>
+  <dependency>
+  <groupId>com.cshop</groupId>
+  <artifactId>cshop-common</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  </dependencies>
+  <modules>
+  	<module>cshop-manager-pojo</module>
+  	<module>cshop-manager-mapper</module>
+  	<module>cshop-manager-service</module>
+  	<module>cshop-manager-web</module>
+  </modules>
+  <build>
+  <plugins>
+  <plugin>
+  
+  </plugin>
+  </plugins>
+  </build>
+</project>

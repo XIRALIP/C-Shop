@@ -1,0 +1,56 @@
+package com.cshop.controller;
+
+import java.io.IOException;
+
+import org.junit.Test;
+
+import com.google.gson.Gson;
+import com.qiniu.common.QiniuException;
+import com.qiniu.common.Zone;
+import com.qiniu.http.Response;
+import com.qiniu.storage.Configuration;
+import com.qiniu.storage.UploadManager;
+import com.qiniu.storage.model.DefaultPutRet;
+import com.qiniu.util.Auth;
+
+public class QiniuUtil {  
+	@Test
+	public void Upload() {
+	    /**基本配置-从七牛管理后台拿到*/  
+	  //设置好账号的ACCESS_KEY和SECRET_KEY     
+	
+	//构造一个带指定Zone对象的配置类
+	  Configuration cfg = new Configuration(Zone.zone0());
+	  //...其他参数参考类注释
+
+	  UploadManager uploadManager = new UploadManager(cfg);
+	  //...生成上传凭证，然后准备上传
+	  String accessKey = "K9pEa3SiacULk4w7PW_R2LHq2XHx7mJ5kV5M6jrG";
+	  String secretKey = "xFMKiQGEs_E2aJcSnQ84F3OBZNguCc8zt4iHo909";
+	  String bucket = "p27zljt9e.bkt.clouddn.com";
+	  //如果是Windows情况下，格式是 D:\\qiniu\\test.png
+	  String localFilePath = "G:\\imageservice\\1.jpg";
+	  //默认不指定key的情况下，以文件内容的hash值作为文件名
+	  String key = null;
+
+	  Auth auth = Auth.create(accessKey, secretKey);
+	  String upToken = auth.uploadToken(bucket);
+
+	  try {
+	      Response response = uploadManager.put(localFilePath, key, upToken);
+	      //解析上传成功的结果
+	      DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
+	      System.out.println(putRet.key);
+	      System.out.println(putRet.hash);
+	  } catch (QiniuException ex) {
+	      Response r = ex.response;
+	      System.err.println(r.toString());
+	      try {
+	          System.err.println(r.bodyString());
+	      } catch (QiniuException ex2) {
+	          //ignore
+	      }
+	  }
+	}
+	  
+	}  

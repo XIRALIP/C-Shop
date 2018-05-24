@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.cshop.utils.FtpUtil"/>
+<fullyQualifiedTypeName name="org.apache.commons.net.ftp.FTPSClient"/>
+<fullyQualifiedTypeName name="com.qiniu.util.Auth"/>
+<fullyQualifiedTypeName name="com.qiniu.storage.UploadManager"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="com.qiniu.http.Response"/>
+<fullyQualifiedTypeName name="com.qiniu.common.QiniuException"/>
+<fullyQualifiedTypeName name="com.qiniu.util.StringMap"/>
+<fullyQualifiedTypeName name="com.qiniu.storage.Configuration"/>
+<fullyQualifiedTypeName name="com.qiniu.common.Zone"/>
+<fullyQualifiedTypeName name="com.qiniu.storage.model.DefaultPutRet"/>
+<fullyQualifiedTypeName name="com.google.gson.Gson"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="com.qiniu.storage.BucketManager"/>
+</qualifiedTypeNameHistroy>

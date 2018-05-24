@@ -1,0 +1,5 @@
+package com.cshop.service;
+
+public interface ItemService {
+
+}

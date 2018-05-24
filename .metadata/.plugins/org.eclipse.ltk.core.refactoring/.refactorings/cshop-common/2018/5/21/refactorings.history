@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.cshop.utils&apos; to &apos;com.cshop.common.utils&apos;&#x0D;&#x0A;- Original project: &apos;cshop-common&apos;&#x0D;&#x0A;- Original element: &apos;cshop-common/src/main/java/com.cshop.utils&apos;&#x0D;&#x0A;- Renamed element: &apos;cshop-common/src/main/java/com.cshop.common.utils&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.cshop.utils&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;com.cshop.utils" name="com.cshop.common.utils" qualified="false" references="true" stamp="1527051236726" textual="false" version="1.0"/>
+</session>
