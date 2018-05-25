@@ -1,6 +1,0 @@
-com\cshop\service\ItemService.class
-com\cshop\service\impl\ItemServiceImpl.class
-com\cshop\service\impl\PictureServiceImpl.class
-com\cshop\service\PictureService.class
-com\cshop\service\ItemCatService.class
-com\cshop\service\impl\ItemCatServiceImpl.class
